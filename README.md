@@ -33,7 +33,8 @@ var LunarCalendar = require("lunar-calendar");
 - @param {Number} `month` 公历月 范围[1-12]
 - @param {Boolean} `fill`（可选） 是否填充当月日历首尾日期，设为true时，会在首尾填入上下月数据，自动补全一个7*6阵列数据。（可更美观的打造你的万年历产品）
 
-####返回数据####
+#### 返回数据
+````
 	{
 	    "firstDay": 5, //该月1号星期几（日历开始位置）
 	    "monthDays": 28, //该月天数
@@ -60,6 +61,7 @@ var LunarCalendar = require("lunar-calendar");
 			...
 	    ]
 	}
+````
 
 ### LunarCalendar.solarCalendar(year,month[,fill])
 获取公历某月日历数据（不带农历信息）
@@ -69,7 +71,9 @@ var LunarCalendar = require("lunar-calendar");
 - @param {Number} `month` 公历月 范围[1-12]
 - @param {Boolean} `fill`（可选） 是否填充当月日历首尾日期，设为true时，会在首尾填入上下月数据，自动补全一个7*6阵列数据。（可更美观的打造你的万年历产品）
 
-####返回数据####
+#### 返回数据
+
+```
 	{
 	    "firstDay": 5, //该月1号星期几（日历开始位置）
 	    "monthDays": 28, //该月天数
@@ -82,6 +86,7 @@ var LunarCalendar = require("lunar-calendar");
 			...
 	    ]
 	}
+```
 
 ### LunarCalendar.solarToLunar(year,month,day)
 将公历转换为农历
@@ -92,6 +97,7 @@ var LunarCalendar = require("lunar-calendar");
 - @param {Number} `day` 公历日 范围[1-31]
 
 #### 返回数据
+```
 	{
 	    "zodiac": "蛇", //生肖属相
 	    "GanZhiYear": "癸巳", //干支纪年
@@ -108,6 +114,7 @@ var LunarCalendar = require("lunar-calendar");
 		"lunarFestival": "", //农历节假日，undefined或‘除夕’之类
 		"term": "" //二十四节气名，undefined或‘立春’之类
 	}
+```
 
 ### LunarCalendar.lunarToSolar(year,month,day)
 将农历转换为公历
@@ -118,11 +125,13 @@ var LunarCalendar = require("lunar-calendar");
 - @param {Number} `day` 农历日 范围[1-30]
 
 #### 返回数据
+```
 	{
 	    "year": 2014, //公历年
 	    "month": 1, //公历月
 	    "day": 31 //公历日
 	}
+```
 
 ### LunarCalendar.setWorktime(data)
 设置某年的节假日安排信息（类库已内置2013-2014年的数据）
@@ -188,6 +197,7 @@ var LunarCalendar = require("lunar-calendar");
 http://api.tuijs.com/lunarToSolar?year=2011&month=1&day=1&callback=fn
 
 返回：
+
 `fn({"year":2011,"month":2,"day":16})`
 
 ## 其它

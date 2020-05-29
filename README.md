@@ -1,5 +1,10 @@
 # LunarCalendar
 
+```
+!!!! A fork version of origin lunar-calendar 
+!!!     https://github.com/zzyss86/LunarCalendar.git
+```
+
 农历（阴历）万年历，是一款支持Node.js和浏览器端使用的全功能农历和公历日历类库。支持农历与公历之间相互转换，含有二十四节气，天干地支纪年纪月纪日，生肖属相，公历节假日及农历传统节假日信息等功能。自带2013-2014节假日安排数据，并可自行配置。带有黄历数据，可自行选择配置。支持1891-2100年。使用**LunarCalendar**可快速开发一款属于自己的万年历产品，行动起来吧！
 
 ## Install
@@ -54,9 +59,9 @@ var LunarCalendar = require("lunar-calendar");
 	            "lunarMonthName": "正月", //农历月中文名
 	            "lunarDayName": "初二", //农历日中文名
 	            "lunarLeapMonth": 9, //农历闰月所在月份，0表示无闰月
-				"solarFestival": "", //公历节假日，undefined或‘劳动节’之类
-				"lunarFestival": "", //农历节假日，undefined或‘除夕’之类
-				"term": "" //二十四节气名，undefined或‘立春’之类
+	            "solarFestival": "", //公历节假日，undefined或‘劳动节’之类
+	            "lunarFestival": "", //农历节假日，undefined或‘除夕’之类
+	            "term": "" //二十四节气名，undefined或‘立春’之类
 	        },
 			...
 	    ]

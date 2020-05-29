@@ -19,7 +19,8 @@ describe('lunar-calendar', function(){
 		"lunarLeapMonth": 9, //农历闰月所在月份，0表示无闰月
 		"solarFestival": undefined, //公历节假日，undefined或‘劳动节’之类
 		"lunarFestival": undefined, //农历节假日，undefined或‘除夕’之类
-		"term": undefined //二十四节气名，undefined或‘立春’之类
+		"term": undefined, //二十四节气名，undefined或‘立春’之类
+		"isBigMonth": false
 	};
 	
 	it('.solarToLunar(year,month,day)，公历转农历', function(){
@@ -27,3 +28,29 @@ describe('lunar-calendar', function(){
 		expect(lunar).to.eql(lunarDate);
 	});
 });
+
+describe('lunar-calendar-festvial', function() {
+	var solarDate = new Date(2020, 4, 27);
+	var lunarDate = {
+		"zodiac": "鼠", //生肖属相
+		"GanZhiYear": "庚子", //干支纪年
+		"GanZhiMonth": "辛巳", //干支纪月
+		"GanZhiDay": "庚午", //干支纪日
+		"worktime": 0, //0无特殊安排，1工作，2放假
+		"lunarYear": 2020, //农历年
+		"lunarMonth": 5, //农历月（1-13，有闰月情况，比如当前闰9月，10表示闰9月，11表示10月）
+		"lunarDay": 5, //农历日
+		"lunarMonthName": "闰四月", //农历月中文名
+		"lunarDayName": "初五", //农历日中文名
+		"lunarLeapMonth": 4, //农历闰月所在月份，0表示无闰月
+		"solarFestival": undefined, //公历节假日，undefined或‘劳动节’之类
+		"lunarFestival": undefined, //农历节假日，undefined或‘除夕’之类
+		"term": undefined, //二十四节气名，undefined或‘立春’之类
+		"isBigMonth": false
+	};
+	
+	it('.solarToLunar(year,month,day)，公历转农历 - 闰四月 - 端午节错', function(){
+		var lunar = LunarCalendar.solarToLunar(solarDate.getFullYear(),solarDate.getMonth()+1,solarDate.getDate());
+		expect(lunar).to.eql(lunarDate);
+	});	
+})
